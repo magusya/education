@@ -21,7 +21,6 @@ Realm:BR-SRV.AU-TEAM.IRPO
 Domain:AU-TEAM.IRPO
 DNS forwarder 192.168.0.1"
 samba-tool domain provision 
-echo -e "BR-SRV.AU-TEAM.IRPO\AU-TEAM.IRPO\192.168.0.1" | /home/git/education/script_sambaDC.sh
 cd /etc
 hostnamectl set-hostname br-srv.au-team.irpo
 domainname br-srv.au-team.irpo
@@ -30,3 +29,4 @@ systemctl enable --now samba
 cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
 systemctl restart network
 smbclient -L br-srv.au-team.irpo -U Administrator
+echo "пропиши systemctl reboot для перезагрузки при необходимости"
