@@ -10,11 +10,18 @@ rm -f /etc/samba/smb.conf
 rm -rf /var/lib/samba
 rm -rf /var/cache/samba
 mkdir -p /var/lib/samba/sysvol
+systemctl stop bind
+systemctl disable bind
+systemctl start samba
+systemctl enable samba
 cd /etc/systemd
 sed -i 's/#DNSSubListener=yes/DNSStubListener=no/' resolved.conf
 systemctl restart systemd-resolved
+echo "
+Realm:BR-SRV.AU-TEAM.IRPO
+Domain:AU-TEAM.IRPO
+DNS forwarder 192.168.0.1"
 samba-tool domain provision 
-echo "ip 192.168.0.1"
 cd /etc
 hostnamectl set-hostname br-srv.au-team.irpo
 domainname br-srv.au-team.irpo
