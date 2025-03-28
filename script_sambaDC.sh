@@ -15,8 +15,6 @@ rm -rf /var/cache/samba
 mkdir -p /var/lib/samba/sysvol
 systemctl stop bind
 systemctl disable bind
-systemctl start samba
-systemctl enable samba
 systemctl restart systemd-resolved
 echo "
 Realm:BR-SRV.AU-TEAM.IRPO
@@ -27,4 +25,7 @@ cd /etc
 hostnamectl set-hostname br-srv.au-team.irpo
 domainname br-srv.au-team.irpo
 nslookup br-srv.au-team.ipro
+systemctl enable --now samba
+cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
+systemctl restart network
 echo " если nslookup не работает, то пропиши systemctl reboot и попробуй еще раз"
