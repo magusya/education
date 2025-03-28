@@ -28,4 +28,4 @@ nslookup br-srv.au-team.ipro
 systemctl enable --now samba
 cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
 systemctl restart network
-echo " если nslookup не работает, то пропиши systemctl reboot и попробуй еще раз"
+echo "пропиши systemctl reboot для перезагрузки, а после smbclient -L br-srv.au-team.irpo -U Administrator"
