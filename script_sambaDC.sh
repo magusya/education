@@ -25,3 +25,5 @@ samba-tool domain provision
 cd /etc
 hostnamectl set-hostname br-srv.au-team.irpo
 domainname br-srv.au-team.irpo
+nslookup br-srv.au-team.ipro
+echo " если nslookup не работает, то пропиши systemctl reboot и попробуй еще раз"
