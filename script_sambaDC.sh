@@ -21,6 +21,7 @@ Realm:BR-SRV.AU-TEAM.IRPO
 Domain:AU-TEAM.IRPO
 DNS forwarder 192.168.0.1"
 samba-tool domain provision 
+echo -e "BR-SRV.AU-TEAM.IRPO\AU-TEAM.IRPO\192.168.0.1" | /home/git/education/script_sambaDC.sh
 cd /etc
 hostnamectl set-hostname br-srv.au-team.irpo
 domainname br-srv.au-team.irpo
