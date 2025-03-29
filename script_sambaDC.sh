@@ -3,7 +3,7 @@ apt-get update
  apt-get install -y nano
  cd /etc
  rm -rf named.conf
- cd /systemd
+ cd systemd
  rm -rf resolved.conf
  mv /home/git/education/named.conf /etc
  mv /home/git/education/resolved.conf /etc/systemd
