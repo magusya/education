@@ -27,3 +27,4 @@ apt-get update
  cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
  systemctl restart network
  smbclient -L br-srv.au-team.irpo -U Administrator
+
