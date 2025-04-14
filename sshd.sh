@@ -7,4 +7,4 @@ usermod -aG wheel sshuser
 echo "sshuser ALL=(ALL) NOPASSWRD:ALL" >> /etc/sudoers
 systemctl start sshd
 ssh-copy-id user@192.168.0.65 -p 2024
-ssh-copy-id user@192.168.0.65 -p 2024
+ssh-copy-id net_admin@192.168.0.62 -p 22
