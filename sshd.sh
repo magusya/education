@@ -6,5 +6,4 @@ passwd sshuser
 usermod -aG wheel sshuser
 echo "sshuser ALL=(ALL) NOPASSWRD:ALL" >> /etc/sudoers
 systemctl start sshd
-su sshuser
-ssh-keygen -t rsa
+
