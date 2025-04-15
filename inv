@@ -1,0 +1,6 @@
+[HQ]
+192.168.0.62 ansible_user=net_admin
+192.168.0.1 ansible_port=2024 ansible_user=sshuser
+192.168.0.65 ansible_user=user
+[BR]
+192.168.3.30 ansible_user=net_admin
