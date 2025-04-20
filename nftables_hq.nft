@@ -1,0 +1,27 @@
+#!/usr/sbin/nft -f
+# ipv4/ipv6 Simple & Safe Firewall
+# you can find examples in /usr/share/nftables/
+
+table inet filter {
+  chain input {
+    type filter hook input priority 0;
+  }
+  chain forward {
+    type filter hook forward priority 0;
+  }
+  chain output {
+    type filter hook output priority 0;
+  }
+
+}
+table inet nat {
+	chain postrouting {
+		type nat hook postrouting priority srcnat;
+		oifname "ens19" masquerade
+	}
+
+	chain prerouting {
+		type nat hook prerouting priority filter;
+		ip daddr 172.16.4.1 tcp dport 22 dnat ip to 192.168.0.1:2024
+	}
+} 
